@@ -14,7 +14,6 @@
 		0B2A661B291892D600088692 /* Simple_Stocks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A6619291892D600088692 /* Simple_Stocks.xcdatamodeld */; };
 		0B2A661D291892D900088692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2A661C291892D900088692 /* Assets.xcassets */; };
 		0B2A6620291892D900088692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2A661E291892D900088692 /* LaunchScreen.storyboard */; };
-		0BB54C582983799C00854391 /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 0BB54C572983799C00854391 /* Montserrat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		0B2A661C291892D900088692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B2A661F291892D900088692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B2A6621291892D900088692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BB54C572983799C00854391 /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = ../../../../../Downloads/Montserrat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				0B2A661E291892D900088692 /* LaunchScreen.storyboard */,
 				0B2A6621291892D900088692 /* Info.plist */,
 				0B2A6619291892D600088692 /* Simple_Stocks.xcdatamodeld */,
-				0BB54C572983799C00854391 /* Montserrat */,
 			);
 			path = "Simple Stocks";
 			sourceTree = "<group>";
@@ -132,7 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2A6620291892D900088692 /* LaunchScreen.storyboard in Resources */,
-				0BB54C582983799C00854391 /* Montserrat in Resources */,
 				0B2A661D291892D900088692 /* Assets.xcassets in Resources */,
 				0B2A6618291892D600088692 /* Main.storyboard in Resources */,
 			);
