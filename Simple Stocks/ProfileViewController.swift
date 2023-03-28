@@ -101,5 +101,50 @@ class ProfileViewController: UIViewController, UIViewControllerTransitioningDele
         }
     }
     
+    
+    @IBAction func DeleteAccount(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete your account?", preferredStyle: .alert)
+            
+        // "Yes" button
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+            let user = Auth.auth().currentUser
+            
+            // Delete user data from the database (e.g., Firestore)
+            if let uid = user?.uid {
+                let db = Firestore.firestore()
+                db.collection("users").document(uid).delete { error in
+                    if let error = error {
+                        print("Error deleting user data: \(error)")
+                    } else {
+                        print("User data successfully deleted.")
+                    }
+                }
+            }
+            
+            // Delete the user from Firebase authentication
+            user?.delete { error in
+                if let error = error {
+                    print("Error deleting user: \(error)")
+                } else {
+                    print("User successfully deleted.")
+                    
+                    // Navigate to the new view controller (e.g., StartViewController)
+                    let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "Start") as! StartViewController
+                    loginVC.modalPresentationStyle = .fullScreen
+                    loginVC.modalTransitionStyle = .crossDissolve
+                    self.present(loginVC, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        // "Cancel" button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 
 }

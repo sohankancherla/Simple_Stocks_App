@@ -294,16 +294,29 @@ class SearchViewController: UIViewController,UIViewControllerTransitioningDelega
             return
         }
 
-        // get the symbolLabel from the cell
+        // Get the symbolLabel from the cell
         let symbolText = cell.symbolLabel.text!
 
-        // add the symbol to the stockSymbols array
+        // Add the symbol to the stockSymbols array
         let db = Firestore.firestore()
         if let uid = Auth.auth().currentUser?.uid {
-            db.collection("users").document(uid).updateData([
-                "stockList": FieldValue.arrayUnion([symbolText])
-            ])
-            cell.add_button.isHidden = true
+            let userDocRef = db.collection("users").document(uid)
+            
+            userDocRef.getDocument { document, error in
+                if let document = document, document.exists {
+                    // Update the existing document
+                    userDocRef.updateData([
+                        "stockList": FieldValue.arrayUnion([symbolText])
+                    ])
+                } else {
+                    // Create a new document with the specified UID
+                    userDocRef.setData([
+                        "stockList": [symbolText]
+                    ])
+                }
+                
+                cell.add_button.isHidden = true
+            }
         }
         
     }
