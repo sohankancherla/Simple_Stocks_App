@@ -6,10 +6,18 @@ Simple Stocks: Easy Investing is an app designed to sepcifcally help amateur inv
 
 # Features
 
-Search
-Users can search for a Stock based on the company name or symbol
-![Simulator Screen Shot - iPhone 14 Pro - 2023-03-17 at 02 32 54](https://user-images.githubusercontent.com/30853467/228354088-38e1a8d2-c728-427b-bcdb-b55a315d345f.png)
+- Search
+- Watchlist
+- Basic Stock Data
+- Analyst Reccomendations
+- Machine Learning Prediction
+- Community Voting
+- Company News
+- Profile and Authenticaion
 
+# APIs and Tools
 
-Watchlist
-Users can add a stock from the search
+- Finnhub.io
+- Alpha Vantage
+- Firebase Authentication
+- Firebase Firestore Cloud Database
